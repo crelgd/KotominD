@@ -39,7 +39,9 @@ void SR_CloseFIle(SR_FILE* handle);
 
 char* SR_GetContent(SR_FILE* handle);
 
-SR_DATA* SR_Parse(SR_FILE* handle, char* sr_data);
+SR_DATA** SR_Parse(SR_FILE* handle, char* sr_data, int* lines);
+
+void SR_ParseClose(SR_DATA** data, int lines);
 
 #endif
 
