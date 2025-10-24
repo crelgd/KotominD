@@ -2,7 +2,7 @@
 // Copyright (c) 2025 crelgd
 //
 // Формат файла для программы
-// Нужно чтоб вводить в программу слова которые нужно запомнить
+// Формат для хранения записей переводов слов
 //
 // Пример записи
 //	休む:yasumu;отдыхать.
@@ -42,6 +42,14 @@ char* SR_GetContent(SR_FILE* handle);
 SR_DATA** SR_Parse(SR_FILE* handle, char* sr_data, int* lines);
 
 void SR_ParseClose(SR_DATA** data, int lines);
+
+// Функция для добавления записи в память существующей записи
+// data - структура с существующими записями
+// dtw - строка для добавления
+char* SR_Add(SR_FILE* handle, char* data, char* dtw);
+
+// Сохраняет все изменения списка в файл
+int SR_SaveFile(SR_FILE* handle, char* data);
 
 #endif
 
