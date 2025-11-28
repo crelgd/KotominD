@@ -11,7 +11,7 @@
 // Содержит просто данные из словаря для функций
 typedef struct {
 	SR_FILE* sr_file;
-	SR_DATA* sr_data;
+	SR_DATA** sr_data;
 } MFILE;
 
 MFILE* MLoadFile(const char* filename);
